@@ -2,14 +2,16 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select
 import json
+from pathlib import Path
 
 from api.bases import Base, User
 from api.utils import verify_password, hash_password
+from api.config import config
 
 
 class DatabaseManager:
-  def __init__(self, db_url: str = "sqlite+aiosqlite:///data.db"):
-    self.engine = create_async_engine(db_url)
+  def __init__(self, db_url = f"sqlite+aiosqlite:///./data.db"):
+    self.engine = create_async_engine(db_url, echo=True)
     self.Session = sessionmaker(
       bind=self.engine,
       expire_on_commit=False,
