@@ -1,0 +1,7 @@
+
+resources.hyperbox.world/<type> -> 127.0.0.1:1488/<type>
+
+login.hyperbox.world/<POST> -> 127.0.0.1:1488/login/<POST>
+
+skins.hyperbox.world/<uuid>/avatar.png
+skins.hyperbox.world/<uuid>/skin.png
