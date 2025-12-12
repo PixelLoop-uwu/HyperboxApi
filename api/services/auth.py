@@ -3,6 +3,7 @@ import secrets
 from api.models import LoginForm, RegisterForm, DeleteForm
 from api.database import DatabaseManager
 from api.config import config
+from api.utils import generate_token
 from loguru import logger
 
 DBManager = DatabaseManager()
@@ -27,8 +28,10 @@ async def register(RegisterForm: RegisterForm) -> dict:
     return {"status": "error", "error": "app_token_is_invalid"}
   
   async with DBManager as manager:
-    if await manager.create_user(RegisterForm.username, RegisterForm.token):
-      return {"status": True}
+    token = generate_token()
+
+    if await manager.create_user(RegisterForm.username, token):
+      return {"status": True, "token": token}
     else:
       return {"status": "error", "error": "user_already_exists"}
 

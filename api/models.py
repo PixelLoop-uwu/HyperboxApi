@@ -9,7 +9,6 @@ class LoginForm(BaseModel):
 
 class RegisterForm(BaseModel):
   username: str
-  token: str
   app_token: str
 
 class DeleteForm(BaseModel):
