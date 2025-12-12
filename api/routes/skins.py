@@ -3,12 +3,13 @@ from fastapi.responses import FileResponse
 
 from api.config import config
 from api.models import UploadSkinForm
+from api.services import upload_skin
 
 
 router = APIRouter()
 
 @router.get("/skins/get_avatar/{username}")
-async def get_avatar(username: str) -> None:
+async def get_avatar_(username: str) -> None:
   path = config.DATA_FOLDER / "player_data" / username / "avatar.png"
 
   if not path.exists() or not path.is_file():
@@ -25,12 +26,12 @@ async def get_avatar(username: str) -> None:
   )
 
 @router.get("/skins/get_skin/{username}")
-async def get_skin(username: str) -> None:
-  path = config.DATA_FOLDER / "player_data" / username / "skin.png"
+async def get_skin_(username: str) -> None:
+  path = config.DATA_FOLDER / "players" / username / "skin.png"
 
   if not path.exists() or not path.is_file():
     return FileResponse(
-      path=config.DATA_FOLDER / "player_data" / "skin.png",
+      path=config.DATA_FOLDER / "players" / "skin.png",
       filename=path.name,
       media_type="application/png"
     )
@@ -42,5 +43,6 @@ async def get_skin(username: str) -> None:
   )
 
 @router.post("/skins/upload_skin")
-async def upload_skin(UploadSkinForm: UploadSkinForm) -> dict:
+async def upload_skin_(UploadSkinForm: UploadSkinForm) -> dict:
   return upload_skin(UploadSkinForm)
+
