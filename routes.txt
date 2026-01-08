@@ -1,0 +1,18 @@
+core:                METHOD
+  /users/login        POST
+  /users/register     POST
+  /users/delete       DELETE
+  /users/ban          POST
+  /users/user_info    GET
+  /users/recovery     PATCH
+  
+ 
+launcher:            METHOD
+  /modpacks/getlist   GET
+  /modpacks/manifest  GET
+  /skins/upload       POST
+  /skins/get          GET 
+  /skins/delete       POST
+  /resources/<path>   GET
+
+

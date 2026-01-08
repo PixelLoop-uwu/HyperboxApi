@@ -1,0 +1,7 @@
+2026-01-09 00:48:29.856 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 00:49:45.483 | SUCCESS  | core.routes.users:delete:37 - Учетная запись Goidochka удалена.
+2026-01-09 01:11:37.172 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 01:27:10.198 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 01:32:52.006 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 01:32:55.514 | SUCCESS  | core.routes.users:recovery:59 - Токен для Goidochka обновлен.
+2026-01-09 01:35:07.295 | SUCCESS  | core.routes.users:recovery:59 - Токен для Goidochka обновлен.
