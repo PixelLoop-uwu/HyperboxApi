@@ -1,10 +1,13 @@
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
+import json
 
 from core.utils import generate_password_token, hash_password, create_asset_token, verify_password
 from core.schemas import *
 from core.database import users as database
 from auth.jwt import create_jwt
+from config import config
+from launcher.services.skins import delete_skin
 
 
 async def create_user(db: AsyncSession, data: RegisterRequest) -> dict:
@@ -31,16 +34,19 @@ async def authenticate(db: AsyncSession, data: LoginRequest) -> dict:
 
   await database.update_assets_tokens(db, user, new_asset_token, "add")
 
+  launcher_data = config.DATA_FOLDER / "modpacks.json"
+
   return {
     "status": "ok",
     "jwt": jwt,
     "asset_token": new_asset_token,
-    "uid": user.uid
+    "uid": user.uid,
+    "launcher_data": json.loads(launcher_data.read_text(encoding="utf-8"))
   }
 
 
 async def delete_user(db: AsyncSession, identifier: str) -> dict:
-  # Удаление папки игрока
+  await delete_skin(db, identifier)
   return await database.delete_user(db, identifier)
 
 

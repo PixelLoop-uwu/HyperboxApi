@@ -8,3 +8,9 @@ class config:
 
   JWT_SECRET = "MMg~ENjyVY4IObDaV$SDNWb@3FOvpW4#}@FhfgrEh95DTLcHHnOh"
   JWT_ALGORITHM = "HS256"
+
+  SERVER_RCON = {
+    "host": "123123",
+    "port": 1231,
+    "password": "Goidaa"
+  }

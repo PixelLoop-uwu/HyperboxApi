@@ -13,6 +13,7 @@ dependencies = [
     "pillow>=12.1.0",
     "pytest>=9.0.2",
     "python-jose>=3.5.0",
+    "rcon>=2.4.9",
     "sqlalchemy>=2.0.45",
     "uvicorn>=0.40.0",
 ]

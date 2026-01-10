@@ -1,7 +1,6 @@
 from sqlalchemy import select, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 from core.database.models import User
-from core.utils import verify_password
 import json
 from typing import Union
 
@@ -30,7 +29,7 @@ async def get_user_by_identifier(session: AsyncSession, identifier: str) -> User
   )
   return result.scalar_one_or_none()
 
-async def update_assets_tokens(session: AsyncSession, user_or_uid: Union[User, str, int], token: str, action: str = "add") -> bool:
+async def update_assets_tokens(session: AsyncSession, user_or_uid: Union[User, str, int], token: str, action: str = "add") -> str:
   """action: add, check, delete"""
   if not isinstance(user_or_uid, User):
     user = await get_user_by_identifier(session, user_or_uid)
@@ -65,7 +64,7 @@ async def update_assets_tokens(session: AsyncSession, user_or_uid: Union[User, s
     
   return user.minecraft_username
 
-async def get_user_info_dict(session: AsyncSession, identifier: str) -> dict | None:
+async def get_user_info_dict(session: AsyncSession, identifier: str) -> dict:
   user = await get_user_by_identifier(session, identifier)
   if not user:
     raise ValueError("user_not_found")
@@ -76,7 +75,7 @@ async def get_user_info_dict(session: AsyncSession, identifier: str) -> dict | N
     "creation_date": user.creation_date.isoformat()
   }
 
-async def delete_user(session: AsyncSession, identifier: str) -> bool:
+async def delete_user(session: AsyncSession, identifier: str) -> str:
   user = await get_user_by_identifier(session, identifier)
   if not user:
     raise ValueError("user_not_found")

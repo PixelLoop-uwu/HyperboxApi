@@ -42,14 +42,14 @@ def upload_skin(UploadSkinForm) -> dict:
 
 
 async def delete_skin(session: AsyncSession, identifier: str) -> dict:
-  username = await get_user_by_identifier(session, identifier).minecraft_username
+  user = await get_user_by_identifier(session, identifier)
 
-  path = config.DATA_FOLDER / "players" / username
-  if path.exists():
-    shutil.rmtree(path)
-  
-  else:
+  if not user:
     raise ValueError("user_not_found")
 
-  return username
+  path = config.DATA_FOLDER / "players" / user.minecraft_username
+  if path.exists():
+    shutil.rmtree(path)
+
+  return user.minecraft_username
   

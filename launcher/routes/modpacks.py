@@ -5,19 +5,8 @@ from config import config
 
 router = APIRouter()
 
-@router.get("/")
-async def get_file_by_path():
-
-  modpacks_json = config.DATA_FOLDER / "modpacks.json"
-
-  return FileResponse(
-    path=modpacks_json, 
-    filename=modpacks_json.name,
-    media_type='application/json'
-  )
-
 @router.get("/get")
-async def get_file_by_path(modpack: str):
+async def get_modpack(modpack: str):
 
   modpacks_json = config.DATA_FOLDER / "modpacks" / f"{modpack}.json"
 

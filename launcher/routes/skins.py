@@ -64,5 +64,6 @@ async def delete_skin(identifier: str, db = Depends(get_db), admin = Depends(adm
   try:
     username = await skins.delete_skin(db, identifier)
     logger.info(f"Скин {username} удален")
+    return {"status": 'ok'}
   except ValueError as e:
     return {"status": "error", "error": str(e)}
