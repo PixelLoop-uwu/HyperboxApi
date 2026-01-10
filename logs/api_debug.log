@@ -5,3 +5,19 @@
 2026-01-09 01:32:52.006 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
 2026-01-09 01:32:55.514 | SUCCESS  | core.routes.users:recovery:59 - Токен для Goidochka обновлен.
 2026-01-09 01:35:07.295 | SUCCESS  | core.routes.users:recovery:59 - Токен для Goidochka обновлен.
+2026-01-09 03:41:15.836 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 03:41:57.334 | SUCCESS  | core.routes.users:recovery:59 - Токен для Goidochka обновлен.
+2026-01-09 18:17:32.103 | SUCCESS  | core.routes.users:delete:37 - Учетная запись Goidochka удалена.
+2026-01-09 18:32:13.996 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 18:52:02.683 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 18:53:02.165 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 18:53:13.371 | INFO     | launcher.routes.skins:delete_skin:66 - Скин Goidochka удален
+2026-01-09 18:55:22.280 | INFO     | launcher.routes.skins:delete_skin:66 - Скин Goidochka удален
+2026-01-09 19:02:20.310 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь Goidochka.
+2026-01-09 19:02:42.730 | INFO     | launcher.routes.skins:delete_skin:66 - Скин Goidochka удален
+2026-01-09 19:02:56.601 | SUCCESS  | core.routes.users:recovery:59 - Токен для Goidochka обновлен.
+2026-01-09 19:13:47.363 | SUCCESS  | core.routes.users:delete:37 - Учетная запись Goidochka удалена.
+2026-01-10 03:32:11.433 | INFO     | core.routes.users:login:26 - k4tsuro_ авторизовался.
+2026-01-10 03:33:36.775 | SUCCESS  | core.routes.users:register:20 - Добавлен пользователь k4tsuro_.
+2026-01-10 03:33:49.416 | INFO     | core.routes.users:login:26 - k4tsuro_ авторизовался.
+2026-01-10 03:34:58.590 | INFO     | core.routes.users:login:26 - k4tsuro_ авторизовался.
