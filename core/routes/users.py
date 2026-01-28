@@ -23,8 +23,9 @@ async def register(data: RegisterRequest, db: AsyncSession = Depends(get_db), ad
 
 @router.post("/login")
 async def login(data: LoginRequest, db: AsyncSession = Depends(get_db)):
+  login_data = authenticate(db, data)
   logger.info(f"{data.minecraft_username} авторизовался.")
-  return await authenticate(db, data)
+  return await login_data
 
 
 @router.delete("/delete")

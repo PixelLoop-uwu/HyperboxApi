@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: hyperbox_api
+    ports:
+      - "43434:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    restart: always
+
+    
